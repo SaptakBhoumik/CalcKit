@@ -1,4 +1,5 @@
 #include "dual.hpp"
+#include "constant.hpp"
 #include <cmath>
 namespace CalcKit{
 Dual::Dual(double re, double eps){
@@ -222,7 +223,7 @@ Dual operator/(double a, const Dual& b){
         if(a==0){
             return Dual(0,1/b.eps);
         }
-        return Dual(1/0,1/0);
+        return Dual(C_INF, C_INF);
     }
     return Dual(a / b.re, -a*b.eps / (b.re * b.re));
 }
