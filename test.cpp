@@ -4,22 +4,14 @@
 using namespace CalcKit;
 #include <iostream>
 long double f(long double x){
-    return x;//x^2/2,x^3/6
+    return x-sin(x);//x^2/2,x^3/6
 }
 long double f1(long double x){
-    return x*x/2;
-}
-long double f2(long double x){
-    return x*x*x/6;
-}
-long double f3(long double x){
-    return x*x*x*x/24;
+    return (x*x/2)+cos(x);
 }
 int main(){
     long double a=-15,b=20;
-    std::cout<<Integrate(f,a,b,1)<<" "<<f1(b)-f1(a)<<std::endl;
-    std::cout<<Integrate(f,a,b,2)<<" "<<f2(b)-f2(a)<<std::endl;
-    std::cout<<Integrate(f,a,b,3)<<" "<<f3(b)-f3(a)<<std::endl;
+    std::cout<<Integrate(f,a,b)<<" "<<f1(b)-f1(a)<<std::endl;
     long double x[] = {.1, .2, .5, .6, .7, .8, .9};
     long double y[] = {1, 2, 3, 4, 4, 5, 6};
     auto dy_dx=Derivative(y,x,7);

@@ -33,7 +33,7 @@ long double __asr(std::function<long double(long double)> f,
            __asr(f, m, fm, b, fb, eps/2, right.integral, right.m, right.fm);
 }
 long double Integrate(std::function<long double(long double)> func,
-                                  long double a,long double b,size_t count,long double eps
+                                  long double a,long double b,long double eps
                                   ){
     int sign = 1;
     if(a>b){
@@ -44,22 +44,6 @@ long double Integrate(std::function<long double(long double)> func,
     }
     else if(a==b){
         return 0;
-    }
-    if(count==0){
-        throw std::invalid_argument("count must be >=1");
-    }
-    else if(count>1){
-        long double fact=factorial(count-1);
-        auto tb = [func,fact,b,count](long double x)->long double{//Upper limit is b
-                return (1/fact)*std::pow(b-x,(long double)(count-1))*func(x);
-            };
-        auto ta = [func,fact,a,count](long double x)->long double{//Upper limit is a
-                return (1/fact)*std::pow(a-x,(long double)(count-1))*func(x);
-            };
-        //y=I(b,0),z=I(a,0)
-        auto y=Integrate(tb,0,b,1,eps);//F(b)-F(0)
-        auto z=Integrate(ta,0,a,1,eps);//F(a)-F(0)
-        return sign*(y-z);
     }
     auto fa = func(a);
     auto fb = func(b);

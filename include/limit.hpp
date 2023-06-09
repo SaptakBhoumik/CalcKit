@@ -3,8 +3,13 @@
 #include <functional>
 #include <cstddef>
 #include <cstdint>
-//Limitions:-x cant be infinite
 namespace CalcKit{
+template<typename T>
+std::function<long double(long double)> toRealfun(T func){
+    return [func](long double x)->long double{
+        return (long double)func(x);
+    };
+}
 long double LeftLimit(std::function<long double(long double)> func,
                       long double x,long double step=1e-6
                       );//Calculate the left limit of a function at x
