@@ -11,7 +11,7 @@
       to a function of type ``std::function<long double(long double)>``. where T1 and T2 are any type that can be converted to long double
   
   - ```cpp
-    long double LeftLimit(std::function<long double(long double)> func,               long double x,long double step=1e-6);
+    long double LeftLimit(std::function<long double(long double)> func,long double x,long double step=1e-6);
     ```
       Returns the left hand limit of the function ``func`` at ``x``. The value ``step`` is the amount of step it should take in the left hand side of the number line. In short it returns the value of ``func(x-step)``
   

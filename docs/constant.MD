@@ -25,7 +25,7 @@ Contains definitions of some constants
     C_SQRT1_5 = 0.447213595499957939L;  /* sqrt(1/5) */
     C_SQRTPI = 1.772453850905515992L;   /* sqrt(pi) */
     C_SQRT1_PI = 0.564189583547756286L; /* sqrt(1/pi) */
-    C_INF = 1.0 / 0.0;
-    C_NEG_INF = -1.0 / 0.0;
-    C_NAN = 0.0 / 0.0;
+    C_INF = 1.0 / 0.0;                  /* inf */
+    C_NEG_INF = -1.0 / 0.0;             /* -inf */
+    C_NAN = 0.0 / 0.0;                  /* nan */
     ```
