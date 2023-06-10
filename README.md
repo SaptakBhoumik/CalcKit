@@ -12,7 +12,7 @@ CalcKit is a lightweight and user-friendly C++ library designed to simplify calc
 
 - **Limits**: Compute the limit of a function as it approaches a specific value or infinity.
 
-Documentation can be found [here](https://saptakbhoumik.github.io/CalcKit/docs)
+Documentation can be found <a href="./docs">here</a>
 
 ## Example Code
 
@@ -44,8 +44,7 @@ int main(){
     std::cout<<"Derivative of h(x) at 2: "<<Derivative(h,2)<<std::endl;
 }
 ```
-More examples can be found [here](https://saptakbhoumik.github.io/CalcKit/example)
-
+More examples can be found <a href="./example">here</a>
 ## Contributing
 Contributions to CalcKit are welcome! If you encounter any bugs, have feature requests, or want to contribute improvements, please submit an issue or a pull request to the CalcKit GitHub repository.
 
