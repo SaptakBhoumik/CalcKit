@@ -1,4 +1,6 @@
 #include "limit.hpp"
+#include "constant.hpp"
+#include <cmath>
 #include <iostream>
 namespace CalcKit{
 long double LeftLimit(std::function<long double(long double)> func,
@@ -15,6 +17,17 @@ long double Limit(std::function<long double(long double)> func,
                   long double x,long double eps
                   ){
     long double step=1e-6;
+    if(std::isinf(x)){
+        auto f=[func](long double x){
+            return func(1/x);
+        };
+        if(x<0){
+            return LeftLimit(f,0,eps);
+        }
+        else{
+            return RightLimit(f,0,eps);
+        }
+    }
     long double left=LeftLimit(func,x,eps);
     long double right=RightLimit(func,x,eps);
     auto diff=std::abs(left-right);

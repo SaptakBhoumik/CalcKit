@@ -7,7 +7,7 @@ namespace CalcKit{
 template<typename T>
 std::function<long double(long double)> toRealfun(T func){
     return [func](long double x)->long double{
-        return (long double)func(x);
+        return (long double)func((long double)x);
     };
 }
 long double LeftLimit(std::function<long double(long double)> func,

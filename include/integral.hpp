@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <cmath>
 namespace CalcKit{
+//Based on https://en.wikipedia.org/wiki/Adaptive_Simpson%27s_method
 long double Integrate(std::function<long double(long double)> func,
                                   long double a,long double b,long double eps=1e-6
                                   );//Using Adaptive Simson 1/3 rule to calculate integral from a to b
