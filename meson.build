@@ -2,7 +2,7 @@ project('CalcKit', 'cpp', version: '1.0.0')
 
 include = include_directories('include/')
 
-add_project_arguments(language: 'cpp')
+add_project_arguments('-std=c++2a', language: 'cpp')
 
 src=[
     'src/derivative.cpp',
