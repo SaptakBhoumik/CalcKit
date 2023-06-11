@@ -12,8 +12,7 @@ CalcKit is a lightweight and user-friendly C++ library designed to simplify calc
 
 - **Limits**: Compute the limit of a function as it approaches a specific value or infinity.
 
-Documentation can be found <a href="./docs">here</a>
-
+**Documentation and installation guide can be found <a href="./docs">here</a>**
 ## Example Code
 
 ```cpp
